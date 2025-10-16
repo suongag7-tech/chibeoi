@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>chibeoi💖</title>
   <style>
     body {
@@ -15,25 +15,26 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      text-align: center;
     }
 
     .scene {
       position: relative;
-      width: 90%;
+      width: 95%;
       max-width: 800px;
-      height: 400px;
+      aspect-ratio: 2 / 1;
       background: linear-gradient(to top, #b8efdb 0%, #d9f5ef 100%);
-      border-radius: 25px;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .sun {
       position: absolute;
-      top: 40px;
-      left: 80px;
-      width: 120px;
-      height: 120px;
+      top: 8%;
+      left: 10%;
+      width: 20%;
+      height: auto;
       animation: shine 4s ease-in-out infinite alternate;
     }
 
@@ -44,9 +45,9 @@
 
     .tree {
       position: absolute;
-      bottom: 30px;
-      left: 150px;
-      width: 200px;
+      bottom: 5%;
+      left: 15%;
+      width: 30%;
       height: auto;
       animation: sway 3s ease-in-out infinite alternate;
       transform-origin: bottom center;
@@ -59,27 +60,27 @@
 
     .butterfly {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 10%;
+      height: auto;
       animation: fly 10s linear infinite;
     }
 
     @keyframes fly {
       0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      25% { transform: translate(200px, -50px) rotate(15deg); }
-      50% { transform: translate(100px, -100px) rotate(-10deg); }
-      75% { transform: translate(250px, -30px) rotate(10deg); }
+      25% { transform: translate(30vw, -5vh) rotate(15deg); }
+      50% { transform: translate(20vw, -10vh) rotate(-10deg); }
+      75% { transform: translate(35vw, -3vh) rotate(10deg); }
       100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
     }
 
     .message {
       position: absolute;
       top: 50%;
-      right: 80px;
+      right: 8%;
       transform: translateY(-50%);
       text-align: left;
       color: #1e3a34;
-      max-width: 360px;
+      max-width: 60%;
     }
 
     .message h1, .message h2, .message p {
@@ -89,19 +90,25 @@
 
     .message h1 {
       animation-delay: 0.5s;
-      font-size: 28px;
+      font-size: 5vw;
       color: #159c87;
     }
 
     .message h2 {
       animation-delay: 2s;
-      font-size: 22px;
+      font-size: 4vw;
       color: #f46fa4;
     }
 
     .message p {
       animation-delay: 3.5s;
-      font-size: 18px;
+      font-size: 3.5vw;
+    }
+
+    @media (min-width: 768px) {
+      .message h1 { font-size: 28px; }
+      .message h2 { font-size: 22px; }
+      .message p { font-size: 18px; }
     }
 
     @keyframes fadeIn {
@@ -114,15 +121,17 @@
       display: flex;
       gap: 12px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 25px;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 16px;
       transition: 0.3s;
+      min-width: 100px;
     }
 
     button.play {
@@ -158,7 +167,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.85);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -168,6 +177,7 @@
       transition: opacity 1s, visibility 1s;
       text-align: center;
       z-index: 10;
+      padding: 0 20px;
     }
 
     .gift-box.active {
@@ -176,7 +186,8 @@
     }
 
     .gift-box img {
-      width: 280px;
+      width: 70%;
+      max-width: 300px;
       animation: pop 1s ease forwards;
     }
 
@@ -187,9 +198,13 @@
 
     .gift-text {
       margin-top: 20px;
-      font-size: 20px;
+      font-size: 5vw;
       color: #d83a7c;
       animation: fadeText 1s ease forwards;
+    }
+
+    @media (min-width: 768px) {
+      .gift-text { font-size: 20px; }
     }
 
     @keyframes fadeText {
@@ -203,10 +218,9 @@
   <div class="scene">
     <img src="mattroi.png" alt="Mặt trời" class="sun">
     <img src="cay.png" alt="Cây" class="tree">
-    <img src="cay.png" alt="Cây" class="tree">
-    <img src="buom.png" alt="Bướm" class="butterfly" style="top:100px; left:200px; animation-delay:0s;">
-    <img src="buom.png" alt="Bướm" class="butterfly" style="top:180px; left:300px; animation-delay:2s;">
-    <img src="buom.png" alt="Bướm" class="butterfly" style="top:120px; left:400px; animation-delay:4s;">
+    <img src="buom.png" alt="Bướm" class="butterfly" style="top:30%; left:20%; animation-delay:0s;">
+    <img src="buom.png" alt="Bướm" class="butterfly" style="top:40%; left:50%; animation-delay:2s;">
+    <img src="buom.png" alt="Bướm" class="butterfly" style="top:25%; left:70%; animation-delay:4s;">
 
     <div class="message">
       <h1>Good morning Chị bé 🌅</h1>
@@ -244,9 +258,15 @@
       giftBox.classList.add("active");
       setTimeout(() => {
         giftBox.classList.remove("active");
-      }, 5000); // bó hoa + lời chúc hiện 5 giây rồi ẩn
+      }, 5000);
     }
+
+    // Tránh lỗi autoplay bị chặn trên điện thoại
+    document.addEventListener('touchstart', () => {
+      if (music.paused) music.play().catch(() => {});
+    }, { once: true });
   </script>
 
 </body>
 </html>
+
